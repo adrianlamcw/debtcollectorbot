@@ -1,0 +1,8 @@
+{
+  "prefix": ".",
+  "discordToken": "your-discord-token",
+  "dbEndpoint": "your-endpoint",
+  "dbUser": "your-username",
+  "dbPassword": "your-password",
+  "dbPort": "3306"
+}
