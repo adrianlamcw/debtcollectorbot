@@ -6,7 +6,7 @@ module.exports = {
   description: "Check total loaned amount of a user",
   execute(message, args, client, db) {
     //Check command arguments and command
-    if (args.length != 1) {
+    if (args.length !== 1) {
       return message.channel.send(
         `Proper format for summary of user. \nEx: ${prefix}sum @user`
       );
@@ -40,11 +40,14 @@ async function checkSum(message, args, db, borrower, client) {
         `No details for ${borrower.username}`
       );
     }
-    message.channel.send(`Loan details: for ${borrower.username}`);
+
+    let text = `Loan details: for ${borrower.username}`;
     for(i=0; i<rows.length; i++){
-      let user = client.users.cache.get(rows[i].lender_id);
-      message.channel.send(`They owe ${user.username} $${rows[i].total}`);
+      let user = await client.users.fetch(rows[i].lender_id);
+      text += `\nThey owe ${user.username} $${rows[i].total}`
     }
+    message.channel.send(`${text}`);
+
   } catch (error) {
     message.reply("Query error");
     console.log(error);
