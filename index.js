@@ -1,6 +1,6 @@
 const {getDatabase, checkSpam} = require("./utils.js")
 const fs = require("fs")
-const {prefix, discordToken} = require("./config.json")
+const {prefix} = require("./config.json")
 const Discord = require("discord.js")
 const newUtils = require("./newutils")
 
@@ -22,7 +22,7 @@ client.once("ready", () => {
     console.log("Ready!")
 })
 
-client.login(discordToken)
+client.login(process.env["DISCORD_TOKEN"])
 
 client.on("message", async (message) => {
     if (!message.content.startsWith(prefix) || message.author.bot) return

@@ -14,20 +14,19 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUsername = exports.getDatabase = void 0;
 const Database = __importStar(require("mysql"));
-const { dbEndpoint, dbUser, dbPassword, dbPort } = require("./config.json");
 function getDatabase() {
     const connection = Database.createConnection({
-        host: dbEndpoint,
-        user: dbUser,
-        password: dbPassword,
-        port: dbPort,
+        host: process.env["DATABASE_ENDPOINT"],
+        user: process.env["DATABASE_USER"],
+        password: process.env["DATABASE_PASSWORD"],
+        port: Number(process.env["DATABASE_PORT"]),
     });
     connection.connect();
     return connection;

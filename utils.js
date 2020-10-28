@@ -1,4 +1,3 @@
-const {dbEndpoint, dbUser, dbPassword, dbPort} = require("./config.json")
 const mysql = require("mysql")
 const util = require("util")
 const Discord = require("discord.js")
@@ -6,10 +5,10 @@ const Discord = require("discord.js")
 module.exports = {
     getDatabase: function () {
         const connection = mysql.createConnection({
-            host: dbEndpoint,
-            user: dbUser,
-            password: dbPassword,
-            port: dbPort,
+            host: process.env["DATABASE_ENDPOINT"],
+            user: process.env["DATABASE_USER"],
+            password: process.env["DATABASE_PASSWORD"],
+            port: Number(process.env["DATABASE_PORT"]),
         })
         const db = util.promisify(connection.query).bind(connection)
         return db

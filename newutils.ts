@@ -1,14 +1,12 @@
 import * as Discord from "discord.js"
 import * as Database from "mysql"
 
-const {dbEndpoint, dbUser, dbPassword, dbPort} = require("./config.json")
-
 export function getDatabase(): Database.Connection {
     const connection = Database.createConnection({
-        host: dbEndpoint,
-        user: dbUser,
-        password: dbPassword,
-        port: dbPort,
+        host: process.env["DATABASE_ENDPOINT"],
+        user: process.env["DATABASE_USER"],
+        password: process.env["DATABASE_PASSWORD"],
+        port: Number(process.env["DATABASE_PORT"]),
     })
     connection.connect()
     return connection

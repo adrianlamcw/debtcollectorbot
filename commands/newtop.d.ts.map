@@ -1,1 +1,1 @@
-{"version":3,"file":"newtop.d.ts","sourceRoot":"","sources":["newtop.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,MAAM,EAAE,OAAO,EAAC,MAAM,YAAY,CAAA;AAC1C,OAAO,EAAC,UAAU,EAAC,MAAM,OAAO,CAAA;;;;;qBAOX,OAAO,QAAQ,KAAK,CAAC,MAAM,CAAC,UAAU,MAAM,YAAY,UAAU;;AAJvF,kBAOC"}
+{"version":3,"file":"newtop.d.ts","sourceRoot":"","sources":["newtop.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,MAAM,EAAE,OAAO,EAAC,MAAM,YAAY,CAAA;AAC1C,OAAO,EAAC,UAAU,EAAC,MAAM,OAAO,CAAA;;;;;qBAOX,OAAO,QAAQ,MAAM,EAAE,UAAU,MAAM,YAAY,UAAU;;AAJlF,kBAOC"}

@@ -18,15 +18,15 @@ function getTopDebtors(message: Message, client: Client, database: Connection, c
         GROUP BY borrower_id
         ORDER BY total DESC
         LIMIT ${count};`
-
+    
     database.query(statement, function (error, rows) {
         let text = "Top Debt Holders\n"
         for (let i = 0; i < rows.length; i++) {
             const row = rows[i]
-
+            
             const id = row.borrower_id
             const amount = row.total
-
+            
             const name = getUsername(client, id)
             text += `${i + 1}. ${name}: ${amount}\n`
         }
