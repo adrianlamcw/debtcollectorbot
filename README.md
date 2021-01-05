@@ -4,7 +4,7 @@
 A discord bot that can track debts between discord users.
 
 ### Implementation
-Uses discord.js and node to interact with the Discord API. A RDS mySQL database is setup on AWS for storing debt transacation data.
+Uses discord.js and node to interact with the Discord API. A RDS mySQL database is setup on AWS for storing debt transaction data.
 
 ### Setup
 Create a new discord bot and add it to a discord server.
